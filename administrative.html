@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>教學網站-許建民-基本資料</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript">
+      function getValue(varname)
+      {
+        var url = window.location.href;
+        var qparts = url.split("?");
+        if (qparts.length == 0){return "";}
+        var query = qparts[1];
+        var vars = query.split("&amp;");
+        var value = "";
+        for (i=0; i<vars.length; i++)
+        {
+          var parts = vars[i].split("=");
+          if (parts[0] == varname)
+          {
+            value = parts[1];
+            break;
+          }
+        }
+        value = unescape(value);
+        value.replace(/\+/g," ");
+        return value;
+      }
+    </script>
+
+  </head>
+  <body>
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <div class="navbar-fixed">
+      <nav>
+        <ul id="edu" class="dropdown-content">
+          <li><a href="#">歷年授課科目</a></li>
+          <li><a href="#">普通體育(上學期)</a></li>
+          <li><a href="#">普通體育(下學期)</a></li>
+          <li><a href="#">運動欣賞</a></li>
+          <li><a href="#">手球(上)</a></li>
+          <li><a href="#">手球(下)</a></li>
+          <li><a href="#">休閒運動專題研究</a></li>
+        </ul>
+        <ul id="admin_ser" class="dropdown-content">
+          <li><a href="administrative.html?#in">校內</a></li>
+          <li><a href="administrative.html?#ext">校外</a></li>
+        </ul>
+        <div class="nav-wrapper">
+          <a href="index.html" class="left brand-logo hide-on-med-and-down">教學網站-許建民</a>
+          <a href="index.html" class="center brand-logo hide-on-large-only">教學網站-許建民</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse">
+          <i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="self.html">基本資料</a></li>
+            <li><a class="dropdown-button" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="education.html" data-activates="edu">教學</a></li>
+            <li><a href="study.html">研究</a></li>
+            <li><a class="dropdown-button" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="administrative.html" data-activates="admin_ser">行政與服務</a></li>
+            <li><a href="advise.html">研究生指導</a></li>
+            <li><a href="links.html">相關連結</a></li>
+            <li><a href="index.html" class="waves-effect waves-light btn yellow darken-2 grey-text text-darken-4 " >Home</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="card blue">
+      <div class="card-tabs">
+        <ul class="tabs tabs-fixed-width">
+          <li class="tab"><a href="#in">校內</a></li>
+          <li class="tab"><a href="#ext">校外</a></li>
+        </ul>
+      </div>
+      <div class="card-content grey lighten-4">
+
+        <ul class="collection" id="in">
+          <li class="collection-item">新竹教育大學體育室主任 (102.8.1〜106.7.31)</li>
+          <li class="collection-item">新竹教育大學師資培育委員會執行秘書</li>
+          <li class="collection-item">新竹教育大學人力資源教育處學程組長 (96.8.1〜100.7.31)</li>
+          <li class="collection-item">教育實習輔導老師 (97.2〜105.1)</li>
+          <li class="collection-item">校內各級委員會代表</li>
+        </ul>
+
+        <ul class="collection" id="ext">
+          <li class="collection-item">第八屆第一任大專手球委員會副主任委員 (2017.1.1〜2018.12.31)</li>
+          <li class="collection-item">第七屆第二任大專手球委員會副主任委員 (2015.1.1〜2016.12.31)</li>
+          <li class="collection-item">2016年度運動i台灣新竹市地方訪視委員</li>
+          <li class="collection-item">2016新竹市場館督訪委員</li>
+          <li class="collection-item">2015新竹縣體育班評鑑委員</li>
+          <li class="collection-item">2013桃竹苗運動休閒產學論壇議事組組長</li>
+          <li class="collection-item">2013台灣運動社會學會年度研討會活動組長</li>
+          <li class="collection-item">2011第二屆海峽兩岸運動產業研討會籌備工作人員</li>
+          <li class="collection-item">2011「建國百年、活力滿百」體育運動學術研討會行政組長</li>
+          <li class="collection-item">教育部2011年度健康醫學學習網經營與推廣計畫內容建置審查委員</li>
+          <li class="collection-item">2010全國大專校院運動休閒管理相關系所發展研討會服務組副組長</li>
+          <li class="collection-item">2010年臺灣體育運動管理學會國際學術研討會暨十週年會會展組副組長</li>
+          <li class="collection-item">新竹市 (2008；2009) 校務評鑑學校體育事務評鑑委員 </li>
+          <li class="collection-item">國小教師、專任運動教練甄試命題、面試委員</li>
+
+        </ul>
+
+      </div>
+    </div>
+  </body>
+</html>
