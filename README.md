@@ -4,3 +4,5 @@
 
 ## administrative.html
 * default tab
+
+fixed tabs
