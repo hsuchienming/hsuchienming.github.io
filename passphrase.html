@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>相關連結</title>
+    <title>通關密語</title>
     <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,6 +16,30 @@
         });
       });
     </script>
+    <script type="text/javascript">
+      function getValue(varname)
+      {
+        var url = window.location.href;
+        var qparts = url.split("?");
+        if (qparts.length == 0){return "";}
+        var query = qparts[1];
+        var vars = query.split("&amp;");
+        var value = "";
+        for (i=0; i<vars.length; i++)
+        {
+          var parts = vars[i].split("=");
+          if (parts[0] == varname)
+          {
+            value = parts[1];
+            break;
+          }
+        }
+        value = unescape(value);
+        value.replace(/\+/g," ");
+        return value;
+      }
+    </script>
+
   </head>
   <body>
     <div class="navbar-fixed">
@@ -45,11 +69,7 @@
     </div>
 
     <ul id="mobile-demo" class="side-nav">
-      <li>
-        <a href="index.html" class="waves-effect waves-light btn " style="background-color:#7F1084 !important">
-          <span style="font-size:18pt">教學研究-許建民</span>
-        </a>
-      </li>
+      <li><a href="index.html" class="waves-effect waves-light btn " style="background-color:#7F1084 !important"><span style="font-size:18pt">教學研究-許建民</span></a></li>
       <li class="bold"><a href="passphrase.html" class="waves-effect waves-teal">通關密語</a></li>
 
       <li class="bold"><a href="self.html" class="waves-effect waves-teal">個人履歷</a></li>
@@ -61,24 +81,33 @@
       <li class="bold"><a href="links.html" class="waves-effect waves-teal">相關連結</a></li>
       <li><a href="index.html" class="waves-effect waves-light btn " style="background-color:#ffffff !important"><span style="color:#7F1084; font-size:20px">Home</span></a></li>
 
-    
     </ul>
 
+    <div class="row">
+      <div class="col l3"></div>
+      <div class="col s12 m7 l6">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/self.jpg">
+          </div>
+          <div class="card-content">
+            <ul>
+              <li><span style="font-size:18px;">姓名 ： 許建民</span></li>
+              <li><span style="font-size:18px;">服務系所 ： 體育學系</span></li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <a href="tel:03-5715131#71518" target="_blank" title="03-5715131#71518"><img src="img/phone.png"></a>
+            <a href="#" target="_blank" title="03-5626262"><img src="img/fax.png"></a>
+            <a href="mailto:shue@mail.nd.nthu.edu.tw" target="_blank" title="Mail" ><img src="img/mail_icon.png"></a>
+            <a href="https://goo.gl/maps/ppnjFYXmPuv" target="_blank" title="新竹市南大路521號"><img src="img/address.png"></a>
+            <a href="#" target="_blank" title="Facebook" class="hide-on-small-only"><img src="img/fb_icon.png"></a>
+            <a href="#" target="_blank" title="Twitter" class="hide-on-small-only"><img src="img/twitter.png"></a>
 
-    <div class="card">
-      <div class="card-content grey lighten-4">
-        <ul class="collection">
-          <li class="collection-item"><a href="http://www.sa.gov.tw/wSite/mp?mp=11" target="_blank">體育署</a></li>
-          <li class="collection-item"><a href="http://www.nthu.edu.tw/" target="_blank">國立清華大學</a></li>
-          <li class="collection-item"><a href="http://www.ntsu.edu.tw/bin/home.php" target="_blank">國立體育大學</a></li>
-          <li class="collection-item"><a href="http://www.handball.org.tw/" target="_blank">中華民國手球協會</a></li>
-          <li class="collection-item"><a href="http://www.cpbl.com.tw/" target="_blank">中華職棒大聯盟</a></li>
-          <li class="collection-item"><a href="http://sbl.basketball-tpe.org/" target="_blank">超級籃球聯賽</a></li>
-          <li class="collection-item"><a href="http://www.rocnspe.org.tw/" target="_blank">中華民國體育學會</a></li>
-          <li class="collection-item"><a href="http://web2.ctusf.org.tw/" target="_blank">大專體育總會</a></li>
-          <li class="collection-item"><a href="http://www.tassm.org.tw/index.php/twHome" target="_blank">臺灣體育運動管理學會</a></li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
+
   </body>
 </html>
