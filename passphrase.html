@@ -41,6 +41,20 @@
         value.replace(/\+/g," ");
         return value;
       }
+
+      // Modal initializer Till 7/20
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, options);
+      });
+
+      // Or with jQuery
+
+      $(document).ready(function(){
+        $('.modal').modal();
+      });
+
+
     </script>
 
   </head>
@@ -86,9 +100,40 @@
 
     </ul>
 
+      <!-- Till 7/20 -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <p style="font-size: 16pt;">
+          1.碩士生學習範疇兼任研究助理，不限入學年級1名。<br/>
+          2.對運動行銷或休閒遊憩領域有興趣且願意學習者。<br/>
+          3.待遇：每月8,000元。<br/>
+          4.聘期：預計自2023年8月1日〜2024年7月31日止 (12個月)，後續依計畫而定。<br/>
+          5.工作內容：收集文獻與繕打、實驗施測、經費請購與核銷及其他交辦事項。<br/>
+          6.學習範疇：參與本年度研究案「事件類型與嚴重程度對球員與球隊形象之影響：球迷的內團體偏私」之進行。<br/>
+          7.應徵方式：2023年7月20日前e-mail至shue@gapp.nthu.edu.tw，填寫個人簡介， 包含姓名、連絡電話、畢業學校、學習興趣等簡要自傳，內容1張A4即可。合者進一步聯繫安排面談，不合者恕不另行通知。<br/>
+          </p>
+        </div>
+  
+      </div>
     <div class="card">
       <div class="card-content grey lighten-4">
         <ul class="collection">
+            <!-- Till 07/20 -->
+            <li class="collection-item avatar">
+              <img src="./img/hiring.png" alt="" class="circle ">
+              <!-- <p><br></p> -->
+              <span class="title" style="font-size: 3vh;"><a href="#modal1">【徵才】許建民老師誠徵國科會兼任研究助理</a></span>
+
+              <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+            </li>
+
+            <li class="collection-item avatar">
+              <img src="./img/confetti.png" alt="" class="circle">
+              <!-- <p><br></p> -->
+              <span class="title" style="font-size: 3vh;">賀！許建民老師獲國科會專題研究計畫補助(執行期間：112年8月1日至113年7月31日) 112112-2410-H-007 -070</span>
+
+              <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+            </li>
             <li class="collection-item avatar">
                 <img src="./img/confetti.png" alt="" class="circle">
                 <!-- <p><br></p> -->

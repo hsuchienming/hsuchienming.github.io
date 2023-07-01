@@ -7,6 +7,7 @@
     <title>教學研究-許建民</title>
     <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="./js/news-ticker.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="icon" type="image/x-icon" href="./img/badge-1.gif">
@@ -17,16 +18,24 @@
         });
       });
 
-
-
       // Or with jQuery
 
       $(document).ready(function(){
         $('.slider').slider({height:700});
 
       });
-        
+      
+      // Modal initializer
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, options);
+      });
 
+      // Or with jQuery
+
+      $(document).ready(function(){
+        $('.modal').modal();
+      });
       
     </script>
     <script type="text/javascript">
@@ -97,20 +106,43 @@
     </ul>
 
     <div class="row">
-      <div class="col l1"></div>
-      <div class="col s12 m7 l6">
+      <div id="ticker-box">
+        <ul>
+          <li><a href="#modal1"><span style="font-size: 20pt;">【徵才】許建民老師誠徵國科會兼任研究助理，即日起開始申請至2023年7月20日，詳情請點擊連結。</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Till 7/20 -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <p style="font-size: 16pt;">
+        1.碩士生學習範疇兼任研究助理，不限入學年級1名。<br/>
+        2.對運動行銷或休閒遊憩領域有興趣且願意學習者。<br/>
+        3.待遇：每月8,000元。<br/>
+        4.聘期：預計自2023年8月1日〜2024年7月31日止 (12個月)，後續依計畫而定。<br/>
+        5.工作內容：收集文獻與繕打、實驗施測、經費請購與核銷及其他交辦事項。<br/>
+        6.學習範疇：參與本年度研究案「事件類型與嚴重程度對球員與球隊形象之影響：球迷的內團體偏私」之進行。<br/>
+        7.應徵方式：2023年7月20日前e-mail至shue@gapp.nthu.edu.tw，填寫個人簡介， 包含姓名、連絡電話、畢業學校、學習興趣等簡要自傳，內容1張A4即可。合者進一步聯繫安排面談，不合者恕不另行通知。<br/>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col m2 l4"></div>
+      <div class="col s12 m8 l4">
         <div class="card">
           <div class="card-image">
-            <img src="img/self.jpg">
+            <img class="responsive-img" src="img/self.jpg">
           </div>
           <div class="card-content">
             <ul>
               <li><span style="font-size:18px;">姓名 ： 許建民</span></li>
               <li><span style="font-size:18px;">服務系所 ： 運動科學系</span></li>
-              <li><span style="font-size:18px;">專長：運動管理、休閒行為、手球</span></li>
+              <li><span style="font-size:18px;">專長：運動行銷、休閒行為、手球</span></li>
               <li><span style="font-size:18px;">ORCID：<a href="https://orcid.org/0000-0003-4760-2562" target="_blank" title="OrcID">0000-0003-4760-2562</a></span></li>
 
-              
             </ul>
           </div>
           <div class="card-action">
@@ -121,66 +153,13 @@
             <a href="#" target="_blank" title="Facebook" class="hide-on-small-only"><img src="img/fb_icon.png"></a>
             <a href="#" target="_blank" title="Twitter" class="hide-on-small-only"><img src="img/twitter.png"></a>
             <a href="https://orcid.org/0000-0003-4760-2562" target="_blank" title="OrcID" class=""><img src="img/orcid.logo.icon.svg"width="35vw" height="35vh"></a>
-
             
           </div>
         </div>
       </div>
-      <div class="col s12 m1 l1"></div>
-      <div class="col s12 m3 l3"><br>
-        <div class="slider">
-          <ul class="slides">
-            <li>
-              <img src="./img/1.jpg"> <!-- random image -->
-              <div class="caption center-align">
-                <!-- <h3>This is our big Tagline!</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
-            </li>
-            <li>
-              <img src="./img/2.png"> <!-- random image -->
-              <div class="caption left-align">
-                <!-- <h3>Left Aligned Caption</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
-            </li>
-            <li>
-              <img src="./img/3.jpg"> <!-- random image -->
-              <div class="caption right-align">
-                <!-- <h3>Right Aligned Caption</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
-            </li>
-            <li>
-              <img src="./img/4.jpg"> <!-- random image -->
-              <div class="caption center-align">
-                <!-- <h3>This is our big Tagline!</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
-            </li>
-            <li>
-              <img src="./img/5.jpg"> <!-- random image -->
-              <div class="caption center-align">
-                <!-- <h3>This is our big Tagline!</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
-            </li>
-            <li>
-              <img src="./img/6.jpg"> <!-- random image -->
-              <div class="caption center-align">
-                <!-- <h3>This is our big Tagline!</h3> -->
-                <!-- <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5> -->
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
 
-
-
-
-
+    <script>startTicker('ticker-box', {speed:10, delay:1000});</script>
 
 
   </body>
