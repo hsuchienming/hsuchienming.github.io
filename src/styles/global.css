@@ -170,9 +170,14 @@ main { min-height: 60vh; }
   gap: var(--space-5);
 }
 .news-kind { color: var(--color-primary); font-size: 0.88rem; font-weight: 800; letter-spacing: 0.08em; }
-.news-item p { margin: 0; font-size: 1.05rem; }
-.news-item.is-archived p { color: var(--color-muted); }
+.news-content { min-width: 0; }
+.news-content p { margin: 0; font-size: 1.05rem; }
+.news-item.is-archived .news-content > p { color: var(--color-muted); }
 .archive-label { margin-left: 0.5rem; color: var(--color-muted); font-size: 0.8rem; }
+.news-details { margin-top: 0.75rem; color: var(--color-text); }
+.news-details summary { width: fit-content; color: var(--color-primary); font-weight: 700; cursor: pointer; }
+.news-details ol { margin: 0.75rem 0 0; padding-left: 1.4rem; }
+.news-details li { margin-top: 0.35rem; }
 
 .content-section { margin-top: var(--space-7); scroll-margin-top: 7rem; }
 .content-section:first-of-type { margin-top: 0; }

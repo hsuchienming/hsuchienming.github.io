@@ -23,13 +23,13 @@ export const researchAreas = [
     title: '行銷研究',
     items: [
       { name: '調查研究', description: '運動消費行為之量化和質化研究' },
-      { name: '實驗設計', description: '實驗室腳本與影片操弄' },
+      { name: '實驗設計', description: '實驗室腳本/影片操弄' },
     ],
   },
   {
     title: '休閒研究',
     items: [
-      { name: '休閒心理／行為', description: '休閒社會心理學研究、休閒行為調查' },
+      { name: '休閒心理 / 行為', description: '休閒社會心理學研究、休閒行為調查' },
       { name: '事業管理', description: '休閒事業分析、活動企劃與評估' },
     ],
   },

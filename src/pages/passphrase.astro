@@ -11,10 +11,20 @@ import news from '../data/news.json';
       {news.map((item) => (
         <li class:list={['news-item', { 'is-archived': item.archived }]}>
           <span class="news-kind">{item.kind}</span>
-          <p>
-            {item.title}
-            {item.archived && <span class="archive-label">已結束</span>}
-          </p>
+          <div class="news-content">
+            <p>
+              {item.title}
+              {item.archived && <span class="archive-label">已結束</span>}
+            </p>
+            {'details' in item && item.details && (
+              <details class="news-details" hidden>
+                <summary>查看徵才內容</summary>
+                <ol>
+                  {item.details.map((detail) => <li>{detail}</li>)}
+                </ol>
+              </details>
+            )}
+          </div>
         </li>
       ))}
     </ul>
