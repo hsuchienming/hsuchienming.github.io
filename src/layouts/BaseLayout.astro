@@ -1,6 +1,7 @@
 ---
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import BackToTop from '../components/BackToTop.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -34,5 +35,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </main>
     <SiteFooter />
+    <BackToTop />
   </body>
 </html>
