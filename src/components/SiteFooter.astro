@@ -1,12 +1,30 @@
 ---
-import { navigation, siteName } from '../data/site';
+import { siteName } from '../data/site';
 ---
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <nav aria-label="頁尾導覽">
-      {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
-    </nav>
-    <p>© {new Date().getFullYear()} {siteName} · 國立清華大學運動科學系</p>
+    <div class="footer-contact">
+      <p class="footer-contact-label">聯絡資訊</p>
+      <address>
+        <a class="footer-contact-item" href="https://goo.gl/maps/ppnjFYXmPuv" target="_blank" rel="noreferrer">
+          <img src="/img/address.png" alt="" width="32" height="32" />
+          <span>新竹市南大路 521 號</span>
+        </a>
+        <a class="footer-contact-item" href="tel:+88635715131,71518">
+          <img src="/img/phone.png" alt="" width="32" height="32" />
+          <span>03-5715131 #71518</span>
+        </a>
+        <span class="footer-contact-item">
+          <img src="/img/fax.png" alt="" width="32" height="32" />
+          <span>03-5626262</span>
+        </span>
+        <a class="footer-contact-item" href="mailto:shue@gapp.nthu.edu.tw">
+          <img src="/img/mail_icon.png" alt="" width="32" height="32" />
+          <span>shue@gapp.nthu.edu.tw</span>
+        </a>
+      </address>
+    </div>
+    <p class="footer-copyright">© {new Date().getFullYear()} {siteName} · 國立清華大學運動科學系</p>
   </div>
 </footer>
