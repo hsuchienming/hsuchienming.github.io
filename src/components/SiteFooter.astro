@@ -1,0 +1,12 @@
+---
+import { navigation, siteName } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav aria-label="頁尾導覽">
+      {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <p>© {new Date().getFullYear()} {siteName} · 國立清華大學運動科學系</p>
+  </div>
+</footer>

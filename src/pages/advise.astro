@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import students from '../data/students.json';
+---
+
+<BaseLayout title="研究生" description="許建民教授歷年指導研究生與論文題目。">
+  <div class="content-shell">
+    <PageHeader title="研究生" description="歷年指導學生與論文題目。" />
+    <table class="student-table">
+      <thead>
+        <tr><th scope="col">姓名</th><th scope="col">年度</th><th scope="col">論文題目</th></tr>
+      </thead>
+      <tbody>
+        {students.map((student) => (
+          <tr>
+            <td data-label="姓名">{student.name}</td>
+            <td data-label="年度">{student.year}</td>
+            <td data-label="論文">{student.thesis}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</BaseLayout>

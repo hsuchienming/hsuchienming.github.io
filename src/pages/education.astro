@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import courses from '../data/courses.json';
+
+const groups = [
+  { title: '大學部', items: courses.undergraduate },
+  { title: '碩士班', items: courses.graduate },
+  { title: '在職專班', items: courses.inService },
+];
+---
+
+<BaseLayout title="授課科目" description="許建民教授的大學部、碩士班與在職專班授課科目。">
+  <div class="content-shell">
+    <PageHeader title="授課科目" />
+    <div class="course-grid">
+      {groups.map((group) => (
+        <section class="course-column">
+          <h2>{group.title}</h2>
+          <ul class="simple-list">{group.items.map((item) => <li>{item}</li>)}</ul>
+        </section>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

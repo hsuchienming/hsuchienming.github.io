@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import profile from '../data/profile.json';
+
+const sections = [
+  { title: '現職', items: profile.current },
+  { title: '學歷', items: profile.education },
+  { title: '經歷', items: profile.experience },
+  { title: '專長', items: profile.expertise },
+];
+---
+
+<BaseLayout title="個人履歷" description="許建民教授的現職、學歷、經歷與專長。">
+  <div class="content-shell reading-shell">
+    <PageHeader title="個人履歷" />
+    {sections.map((section) => (
+      <section class="content-section">
+        <h2>{section.title}</h2>
+        <ul class="simple-list">
+          {section.items.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
+    ))}
+    <section class="content-section">
+      <h2>聯絡方式</h2>
+      <ul class="simple-list">
+        <li><a href="tel:+88635715131,71518">電話：03-5715131 #71518</a></li>
+        <li>傳真：03-5626262</li>
+        <li><a href="mailto:shue@gapp.nthu.edu.tw">shue@gapp.nthu.edu.tw</a></li>
+        <li><a href="https://orcid.org/0000-0003-4760-2562" target="_blank" rel="noopener noreferrer">ORCID：0000-0003-4760-2562</a></li>
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
