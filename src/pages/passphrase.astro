@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import news from '../data/news.json';
+---
+
+<BaseLayout title="最新消息" description="許建民教授的研究、教學與學生最新消息。">
+  <div class="content-shell reading-shell">
+    <PageHeader title="最新消息" description="研究、教學、學生表現與歷年公告。" />
+    <ul class="news-list">
+      {news.map((item) => (
+        <li class:list={['news-item', { 'is-archived': item.archived }]}>
+          <span class="news-kind">{item.kind}</span>
+          <div class="news-content">
+            <p>
+              {item.title}
+              {item.archived && <span class="archive-label">已結束</span>}
+            </p>
+            {'details' in item && item.details && (
+              <details class="news-details" hidden>
+                <summary>查看徵才內容</summary>
+                <ol>
+                  {item.details.map((detail) => <li>{detail}</li>)}
+                </ol>
+              </details>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

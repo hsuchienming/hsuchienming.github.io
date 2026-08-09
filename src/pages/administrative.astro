@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import service from '../data/service.json';
+---
+
+<BaseLayout title="行政服務" description="許建民教授的校內與校外行政服務經歷。">
+  <div class="content-shell reading-shell">
+    <PageHeader title="行政服務" />
+    <nav class="tab-navigation" aria-label="行政服務分類">
+      <a href="#internal">校內服務</a>
+      <a href="#external">校外服務</a>
+    </nav>
+    <section id="internal" class="content-section">
+      <h2>校內服務</h2>
+      <ul class="simple-list">{service.internal.map((item) => <li>{item}</li>)}</ul>
+    </section>
+    <section id="external" class="content-section">
+      <h2>校外服務</h2>
+      <ul class="simple-list">{service.external.map((item) => <li>{item}</li>)}</ul>
+    </section>
+  </div>
+</BaseLayout>

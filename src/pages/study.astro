@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PublicationEntry from '../components/PublicationEntry.astro';
+import publications from '../data/publications.json';
+
+const categories = [
+  { id: 'papers', label: '期刊論文', entries: publications.papers, groupByYear: true },
+  { id: 'seminar', label: '研討會論文', entries: publications.seminar, groupByYear: true },
+  { id: 'report', label: '專書與技術報告', entries: publications.report, groupByYear: false },
+  { id: 'project', label: '研究計畫', entries: publications.project, groupByYear: true },
+  { id: 'other', label: '其他著作', entries: publications.other, groupByYear: false },
+];
+
+function entryYear(entry: string) {
+  return entry.match(/(?:19|20)\d{2}/)?.[0] ?? '其他';
+}
+
+function groupEntries(entries: string[]) {
+  return entries.reduce<Record<string, string[]>>((groups, entry) => {
+    const year = entryYear(entry);
+    (groups[year] ??= []).push(entry);
+    return groups;
+  }, {});
+}
+---
+
+<BaseLayout title="學術發表" description="許建民教授的期刊論文、研討會論文、專書、技術報告與研究計畫。">
+  <div class="content-shell">
+    <PageHeader title="學術發表" />
+    <nav class="tab-navigation" aria-label="學術發表分類">
+      {categories.map((category) => <a href={`#${category.id}`}>{category.label}</a>)}
+    </nav>
+
+    {categories.map((category) => (
+      <section id={category.id} class="content-section">
+        <h2>{category.label}</h2>
+        {category.groupByYear ? (
+          Object.entries(groupEntries(category.entries))
+            .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
+            .map(([year, entries]) => (
+            <div class="year-group">
+              <h3>{year}</h3>
+              <ol class="publication-list">
+                {entries.map((entry, index) => <PublicationEntry text={entry} index={index} />)}
+              </ol>
+            </div>
+          ))
+        ) : (
+          <ol class="publication-list">
+            {category.entries.map((entry, index) => <PublicationEntry text={entry} index={index} />)}
+          </ol>
+        )}
+      </section>
+    ))}
+  </div>
+</BaseLayout>

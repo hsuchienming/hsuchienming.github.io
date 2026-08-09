@@ -1,0 +1,19 @@
+---
+interface Props {
+  text: string;
+  index: number;
+}
+
+const { text, index } = Astro.props;
+const urlPattern = /(https:\/\/doi\.org\/[^\s]+)/g;
+const parts = text.split(urlPattern);
+---
+
+<li class="publication-entry">
+  <span class="entry-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+  <p>
+    {parts.map((part) => part.startsWith('https://doi.org/')
+      ? <a href={part} target="_blank" rel="noopener noreferrer">{part}</a>
+      : part)}
+  </p>
+</li>

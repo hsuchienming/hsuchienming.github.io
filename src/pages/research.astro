@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { researchAreas } from '../data/site';
+---
+
+<BaseLayout title="研究領域" description="許建民教授的運動行銷、資料科學與休閒研究領域。">
+  <div class="content-shell">
+    <PageHeader title="研究領域" />
+    {researchAreas.map((area) => (
+      <section class="research-group">
+        <h2>{area.title}</h2>
+        <div class="research-items">
+          {area.items.map((item) => (
+            <article class="research-item">
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>
